@@ -40,12 +40,11 @@ public class Main {
 		
 	public static void main(String[] args) throws InterruptedException {
 		
-		
-				
 		System.out.println("");
 		System.out.println("PiClock - An LED Analog Clock");
 		System.out.println("Designed for the Raspberry Pi");
 		System.out.println("By Bentley Carr");
+		System.out.println("http://www.bentleycarr.com")
 		System.out.println("");
 		
 		while (true) {
@@ -65,15 +64,22 @@ public class Main {
 	
 	public static void getMinutes () {
 		
-		minuteNumber = (int)((Calendar.MINUTE + (Calendar.SECOND / 60) - 2.49)/5);
+		minuteNumber = (int)((Calendar.MINUTE + 2)/5);
 		System.out.println("Will go to minute no. " + minuteNumber + ".");
+		System.out.println("The minutes are " + Calendar.MINUTE);
 		
 	}
 	
 	public static void getHours () {
 		
-		hourNumber = (int)((Calendar.HOUR + ((Calendar.MINUTE + (Calendar.SECOND /60) / 60) - 2.49)) / 5);
+		hourNumber = (int)((Calendar.HOUR);
+		
+		if (hourNumber >= 12) {
+			hourNumber -= 12;
+		}
+		
 		System.out.println("Will go to  hour no. " + hourNumber + ".");
+		System.out.println("The hours are " + Calendar.HOUR);
 		
 	}
 	
