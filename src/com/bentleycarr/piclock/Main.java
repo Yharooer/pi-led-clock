@@ -7,6 +7,7 @@ import com.pi4j.io.gpio.PinMode;
 import com.pi4j.io.gpio.RaspiPin;
 
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 
 public class Main {
@@ -17,6 +18,9 @@ public class Main {
 	
 	// Creates GPIO Controller Instance
 	static final GpioController gpio = GpioFactory.getInstance();
+	
+	// Creates a Calendar instance
+	static Calendar calendar = new GregorianCalendar();	
 	
 	// Provisions 4 GPIO Pins for the Hour LEDs
 	static final GpioPinDigitalMultipurpose hourPinOne = 
@@ -64,23 +68,23 @@ public class Main {
 	
 	public static void getMinutes () {
 		
-		minuteNumber = (int)((Calendar.MINUTE + 2)/5);
+		minuteNumber = (int)(( calendar.get(Calendar.MINUTE) + 2)/5);
 		
 		System.out.println("Will go to minute no. " + minuteNumber + ".");
-		System.out.println("The minutes are " + Calendar.MINUTE);
+		System.out.println("The minutes are " + calendar.get(Calendar.MINUTE));
 		
 	}
 	
 	public static void getHours () {
 		
-		hourNumber = (int)((Calendar.HOUR) + ((Calendar.MINUTE + 2)/60) );
+		hourNumber = (int)( calendar.get(Calendar.HOUR) + ((Calendar.MINUTE + 2)/60) );
 		
 		if (hourNumber >= 12) {
 			hourNumber -= 12;
 		}
 		
 		System.out.println("Will go to  hour no. " + hourNumber + ".");
-		System.out.println("The hours are " + Calendar.HOUR);
+		System.out.println("The hours are " + calendar.get(Calendar.HOUR));
 		
 	}
 	
