@@ -1,10 +1,5 @@
 package com.bentleycarr.piclock;
-import com.bentleycarr.piclock.Main;
-import com.pi4j.io.gpio.GpioController;
-import com.pi4j.io.gpio.GpioFactory;
-import com.pi4j.io.gpio.GpioPinDigitalMultipurpose;
 import com.pi4j.io.gpio.PinMode;
-import com.pi4j.io.gpio.RaspiPin;
 
 public class LedControl {
 	
@@ -119,28 +114,28 @@ public class LedControl {
 				break;
 			
 			case 9:
-				Main.hourPinOne.setMode(PinMode.DIGITAL_OUTPUT);
-				Main.hourPinOne.high();
-				
 				Main.hourPinTwo.setMode(PinMode.DIGITAL_OUTPUT);
-				Main.hourPinTwo.low();
+				Main.hourPinTwo.high();
 				
-				Main.hourPinThree.setMode(PinMode.DIGITAL_INPUT);
+				Main.hourPinThree.setMode(PinMode.DIGITAL_OUTPUT);
+				Main.hourPinThree.low();
+				
+				Main.hourPinOne.setMode(PinMode.DIGITAL_INPUT);
 				
 				Main.hourPinFour.setMode(PinMode.DIGITAL_INPUT);
 						
 				break;
 				
 			case 10:
-				Main.hourPinTwo.setMode(PinMode.DIGITAL_OUTPUT);
-				Main.hourPinTwo.high();
-				
 				Main.hourPinFour.setMode(PinMode.DIGITAL_OUTPUT);
-				Main.hourPinFour.low();
+				Main.hourPinFour.high();
+				
+				Main.hourPinThree.setMode(PinMode.DIGITAL_OUTPUT);
+				Main.hourPinThree.low();
 				
 				Main.hourPinOne.setMode(PinMode.DIGITAL_INPUT);
 				
-				Main.hourPinThree.setMode(PinMode.DIGITAL_INPUT);
+				Main.hourPinTwo.setMode(PinMode.DIGITAL_INPUT);
 						
 				break;
 				
@@ -148,23 +143,23 @@ public class LedControl {
 				Main.hourPinOne.setMode(PinMode.DIGITAL_OUTPUT);
 				Main.hourPinOne.high();
 				
-				Main.hourPinTwo.setMode(PinMode.DIGITAL_OUTPUT);
-				Main.hourPinTwo.low();
+				Main.hourPinThree.setMode(PinMode.DIGITAL_OUTPUT);
+				Main.hourPinThree.low();
 				
-				Main.hourPinThree.setMode(PinMode.DIGITAL_INPUT);
+				Main.hourPinTwo.setMode(PinMode.DIGITAL_INPUT);
 				
 				Main.hourPinFour.setMode(PinMode.DIGITAL_INPUT);
 						
 				break;
 				
 			case 12:
-				Main.hourPinTwo.setMode(PinMode.DIGITAL_OUTPUT);
-				Main.hourPinTwo.high();
+				Main.hourPinThree.setMode(PinMode.DIGITAL_OUTPUT);
+				Main.hourPinThree.high();
 				
 				Main.hourPinOne.setMode(PinMode.DIGITAL_OUTPUT);
 				Main.hourPinOne.low();
 				
-				Main.hourPinThree.setMode(PinMode.DIGITAL_INPUT);
+				Main.hourPinTwo.setMode(PinMode.DIGITAL_INPUT);
 				
 				Main.hourPinFour.setMode(PinMode.DIGITAL_INPUT);
 						
