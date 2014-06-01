@@ -44,7 +44,7 @@ public class Main {
 		System.out.println("PiClock - An LED Analog Clock");
 		System.out.println("Designed for the Raspberry Pi");
 		System.out.println("By Bentley Carr");
-		System.out.println("http://www.bentleycarr.com")
+		System.out.println("http://www.bentleycarr.com");
 		System.out.println("");
 		
 		while (true) {
@@ -65,6 +65,7 @@ public class Main {
 	public static void getMinutes () {
 		
 		minuteNumber = (int)((Calendar.MINUTE + 2)/5);
+		
 		System.out.println("Will go to minute no. " + minuteNumber + ".");
 		System.out.println("The minutes are " + Calendar.MINUTE);
 		
@@ -72,7 +73,7 @@ public class Main {
 	
 	public static void getHours () {
 		
-		hourNumber = (int)((Calendar.HOUR);
+		hourNumber = (int)((Calendar.HOUR) + ((Calendar.MINUTE + 2)/60) );
 		
 		if (hourNumber >= 12) {
 			hourNumber -= 12;
